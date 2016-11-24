@@ -1,0 +1,254 @@
+.title{
+    >span{
+        padding: 2px 5px;
+        font-size: 0.9rem;
+    }
+    >span.span_atc{
+        background: white;
+        border-radius:5px;
+        color:#387EF5;
+        font-weight: bold;
+    }
+}
+.box1,.box2,.box3,.box4,.box{
+    top:0;
+    bottom:0;
+    left: 0;
+    right:0;
+}
+//.slider{
+//  position: fixed;
+//  top:0;
+//  left: 0;
+//  right: 0;
+//  bottom:0;
+//}
+
+.box_lsit{
+    width: 96%;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: -1px -1px 20px 0px #A0A0A0;
+    float: left;
+    padding: 10px 10px;
+    margin-left: 2%;
+    margin-top:0.5rem;
+    background: #fff;
+    .box_list01{
+        float: left;
+        width: 100%;
+        position: relative;
+        .list01_01{
+            width: 60%;
+            height: 2.2rem;
+            float: left;
+            line-height: 2.2rem;
+            position: relative;
+            .touxiang{
+                width: 2.2rem;
+                height: 2.2rem;
+                float: left;
+                border-radius:50%;
+                overflow: hidden;
+                img{
+                    width: 2.2rem;
+                    height: 2.2rem;
+                }
+            }
+            .username{
+                position: absolute;
+                left: 2.3rem;
+                top:0;
+                height: 2.2rem;
+                font-size: 0.9rem;
+                width: 20rem;
+                a{
+                    color:black;
+                }
+            }
+        }
+        .list01_02{
+            width: 40%;
+            height: 2.2rem;
+            float: right;
+            line-height:2.2rem;
+            position: relative;
+            text-align: right;
+            color: #ccc;
+            font-size: 0.7rem;
+            background: #fff;
+        }
+        .list01_title{
+            width: 100%;
+            float: left;
+            line-height: 1.2rem;
+            color: gray;
+            padding: 0 15px;
+        }
+        
+    }
+    .box_list02{
+        float: left;
+        width: 100%;
+        padding: 5px 15px 0px 15px;
+        >a{
+            position: relative;
+            float: left;
+            width: 100%;
+            height: 7rem;
+            overflow: hidden;
+            .bbb{
+                height: 100px;
+                overflow: hidden;
+            }
+            img{
+            width: 100%;
+            }
+            audio{
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                opacity: 0.7;
+            }
+        }
+        .boxradio{
+            float: left;
+            width: 100%;
+            audio{
+                width: 100%;
+            }
+            video{
+                width: 100%;
+            }
+        }
+        .lovaHate{
+            width: 100%;
+            height: 1.5rem;
+            float: left;
+            margin-top:5px;
+            display: flex;
+            >a{
+                text-align: center;
+                flex:1;
+                width: 25%;
+                height: 1.5rem;
+                line-height: 1.5rem;
+                font-size: 1rem;
+                
+                >i{
+                    margin-right: 3px;
+                }
+            }
+        }
+    }
+}
+.shadowAll{
+    display: none;
+    position: fixed;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom:0;
+    z-index: 99;
+    .shadowBox{
+        position:absolute;
+        top:0;
+        right: 0;
+        left: 0;
+        bottom:0;
+        background: #000000;
+        opacity: 0.3;
+    }
+    .shadowContent{
+        position: absolute;
+        top:5%;
+        right: 5%;
+        left:5%;
+        bottom:15%;
+        background: #fff;
+        .shadowscroll{
+            height: 100%;
+            img{
+                width: 100%;
+            }
+            video{
+                width: 100%;
+            }
+            audio{
+                width: 100%;
+            }
+        }
+    }
+    .shadowclose{
+        position: absolute;
+        width: 80%;
+        height: 8%;
+        bottom: 2%;
+        left: 10%;
+        h2{
+            text-align: center;
+            color:#FFEE00;
+        }
+    }
+
+}
+
+.boxFooter{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    display: -webkit-flex;
+    >a{
+        flex: 1;
+        width: 20%;
+        text-align:center;
+        color: #fff;
+        font-size: 1.4rem;
+        position: relative;
+        text-decoration: none;
+        p{
+            margin-top:-3px;
+            font-size: 0.8rem;
+            margin-left: 1%;
+        }
+        .more_cent{
+            width: 42px;
+            height: 42px;
+            background: #fff;
+            border-radius: 50%;
+            line-height: 44px;
+            position: absolute;
+            padding-left: 3px;
+            color:#387EF5;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+    a.Aatc{
+        color:#6ddcff;
+    }
+}
+
+
+.left_box01{
+    width: 100%;
+    float: left;
+    height: 10rem;
+    background: red;
+}
+
+.left_box02{
+    width: 100%;
+    float: left;
+    height: 20rem;
+    background: blue;
+}
+.left_box03{
+    width: 100%;
+    float: left;
+    height: 10rem;
+    background: green;
+}
+

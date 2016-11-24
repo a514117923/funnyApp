@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="libs/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="libs/ionic/css/ionic.min.css"/>
+		<link rel="stylesheet" type="text/css" href="src/css/index.css"/>
+		
+		<script src="libs/ionic/js/ionic.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/jquery/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="src/js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="src/js/angular.global.js" type="text/javascript" charset="utf-8"></script>
+		<script src="src/js/index.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body ng-app="myApp" >
+	<ion-side-menus >
+		<!-- 中间内容 -->
+		
+		<ion-side-menu-content ng-controller="myCtrl" drag-content="false">
+			<ion-header-bar align-title="center" class="bar-positive">
+				<div class="buttons">
+					<button class="button button-icon icon ion-navicon" ng-click="toggleLeft()"></button>
+				</div>
+				<h1 class="title span_title">
+					<span ng-repeat="k in span" ng-bind="k" ng-click="spanClick($index)"></span>
+				</h1>
+				<div class="buttons">
+					<button class="button button-clear button-icon" ng-click="toggleRigth()">Edit</button>
+				</div>
+			</ion-header-bar>
+			<ion-slide-box on-slide-changed="slideHasChanged(index)" show-pager="false">
+				<ion-slide >
+					<div class="box">
+						<ion-content>
+							<ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()">
+							</ion-refresher>
+							<div class="box_lsit" ng-repeat="k in temp1 track by $index">
+								<div class="box_list01">
+									<div class="list01_01">
+										<div class="touxiang">
+											<a ng-click="openBox(k.weixin_url)"><img ng-src="{{k.profile_image}}"></a>
+										</div>
+										<div class="username">
+											<a ng-click="openBox(k.weixin_url)" ng-bind="k.name">为你改ssssssa阿萨大saaa变love</a>
+										</div>
+									</div>
+									<div class="list01_02" ng-bind="k.create_time">
+										2016-11-03 07:14:01
+									</div>
+									<div class="list01_title" ng-bind="k.text">
+										土豪老板过节 随随便便就发400套房1260辆车
+									</div>
+								</div>
+								<div class="box_list02">
+									
+									<a ng-click="imgClick(k,k.image0)">
+										<ion-scroll class="bbb" >
+											<img ng-src="{{k.image0}}" />
+										</ion-scroll>
+									</a>
+									
+									
+									<div class="lovaHate">
+										<a href=""><i class="glyphicon glyphicon-thumbs-down"></i><span ng-bind="k.love">60</span></a>
+										<a href=""><i class="glyphicon glyphicon-thumbs-up"></i><span ng-bind="k.hate">23</span></a>
+										<a href=""><i class="glyphicon glyphicon-share"></i></a>
+										<a href=""><i class="glyphicon glyphicon-comment"></i></a>
+									</div>
+								</div>
+							</div>
+							<ion-infinite-scroll on-infinite="loadMore()" distance="1%"  >
+							</ion-infinite-scroll>
+						</ion-content>
+						
+					</div>
+				</ion-slide>
+				
+				<ion-slide>
+					<div class="box">
+						<ion-content>
+							<ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()">
+							</ion-refresher>
+							<div class="box_lsit" ng-repeat="k in temp2">
+								<div class="box_list01">
+									<div class="list01_01">
+										<div class="touxiang">
+											<a ng-click="openBox(k.weixin_url)"><img ng-src="{{k.profile_image}}"></a>
+										</div>
+										<div class="username">
+											<a ng-click="openBox(k.weixin_url)" ng-bind="k.name">为你改ssssssa阿萨大saaa变love</a>
+										</div>
+									</div>
+									<div class="list01_02" ng-bind="k.create_time">
+										2016-11-03 07:14:01
+									</div>
+									<div class="list01_title" ng-bind="k.text">
+										土豪老板过节 随随便便就发400套房1260辆车
+									</div>
+								</div>
+								<div class="box_list02">
+							
+									<div class="lovaHate">
+										<a href=""><i class="glyphicon glyphicon-thumbs-down"></i><span ng-bind="k.love">60</span></a>
+										<a href=""><i class="glyphicon glyphicon-thumbs-up"></i><span ng-bind="k.hate">23</span></a>
+										<a href=""><i class="glyphicon glyphicon-share"></i></a>
+										<a href=""><i class="glyphicon glyphicon-comment"></i></a>
+									</div>
+								</div>
+							</div>
+							<!--immediate-check = "false"  防止一切加载 -->
+							
+						    <!--<ion-scroll class="bbb"
+						    [delegate-handle=""]
+						    [direction=""]
+						    [paging=""]
+						    [on-refresh=""]
+						    [on-scroll=""]
+						    [scrollbar-x=""]
+						    [scrollbar-y=""]
+						    [zooming=""]
+						    [min-zoom=""]
+						    [max-zoom=""]>
+						    
+							    <h1>YELLOW</h1>
+							    <h1>YELLOW</h1>
+							    <h1>YELLOW</h1>
+							    <h1>YELLOW</h1>
+							
+  							</ion-scroll>-->
+  							<ion-infinite-scroll on-infinite="loadMore()" distance="1%" ng-if="more2" >
+							</ion-infinite-scroll>
+						</ion-content>
+					</div>
+				</ion-slide>
+				
+				<ion-slide >
+					<div class="box">
+						<ion-content>
+							<ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()">
+							</ion-refresher>
+							<div class="box_lsit" ng-repeat="k in temp3">
+								<div class="box_list01">
+									<div class="list01_01">
+										<div class="touxiang">
+											<a ng-click="openBox(k.weixin_url)"><img ng-src="{{k.profile_image}}"></a>
+										</div>
+										<div class="username">
+											<a ng-click="openBox(k.weixin_url)" ng-bind="k.name"></a>
+										</div>
+									</div>
+									<div class="list01_02" ng-bind="k.create_time"></div>
+									<div class="list01_title" ng-bind="k.text"></div>
+								</div>
+								<div class="box_list02">
+									<a ng-click="musClick(k,$index,$event)">
+										<img ng-src="{{k.image3}}" />
+										<audio controls loop="loop" ng-if="k.video">
+											<source ng-src="{{k.voice_uri | trusted}}">
+										</audio>
+									</a>
+									<div class="lovaHate">
+										<a href=""><i class="glyphicon glyphicon-thumbs-down"></i><span ng-bind="k.love">60</span></a>
+										<a href=""><i class="glyphicon glyphicon-thumbs-up"></i><span ng-bind="k.hate">23</span></a>
+										<a href=""><i class="glyphicon glyphicon-share"></i></a>
+										<a href=""><i class="glyphicon glyphicon-comment"></i></a>
+									</div>
+								</div>
+							</div>
+							<ion-infinite-scroll on-infinite="loadMore()" distance="1%" ng-if="more3" >
+							</ion-infinite-scroll>
+						</ion-content>
+					</div>
+				</ion-slide>
+					
+				<ion-slide >
+					<div class="box">
+						<ion-content>
+							<ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()">
+							</ion-refresher>
+							<div class="box_lsit" ng-repeat="k in temp4">
+								<div class="box_list01">
+									<div class="list01_01">
+										<div class="touxiang">
+											<a ng-click="openBox(k.weixin_url)"><img ng-src="{{k.profile_image}}"></a>
+										</div>
+										<div class="username">
+											<a ng-click="openBox(k.weixin_url)" ng-bind="k.name"></a>
+										</div>
+									</div>
+									<div class="list01_02" ng-bind="k.create_time"></div>
+									<div class="list01_title" ng-bind="k.text"></div>
+								</div>
+								<div class="box_list02">
+									<a ng-click="videoClick(k.video_uri)">
+										<img src="img/dage0.jpg">
+									</a>
+									<div class="lovaHate">
+										<a><i class="glyphicon glyphicon-thumbs-down"></i><span ng-bind="k.love">60</span></a>
+										<a><i class="glyphicon glyphicon-thumbs-up"></i><span ng-bind="k.hate">23</span></a>
+										<a><i class="glyphicon glyphicon-share"></i></a>
+										<a><i class="glyphicon glyphicon-comment"></i></a>
+									</div>
+								</div>
+							</div>
+							<ion-infinite-scroll on-infinite="loadMore()" distance="1%" ng-if="more4" >
+							</ion-infinite-scroll>
+						</ion-content>
+					</div>
+				</ion-slide>
+				
+			</ion-slide-box>
+			
+			<ion-footer-bar align-title="left" class="bar-positive">
+				<!--<div class="buttons">
+					<button class="button">左侧按钮</button>
+				</div>
+				<h1 class="title">Title!</h1>
+				<div class="buttons" ng-click="doSomething()">
+					<button class="button">右侧按钮</button>
+				</div>-->
+				<div class="boxFooter">
+					<a class="Aatc">
+						<i class="glyphicon glyphicon-home"></i>
+						<p>精华</p>
+					</a>
+					<a>
+						<i class="glyphicon glyphicon-time"></i>
+						<p>最新</p>
+					</a>
+					<a>
+						<div class="more_cent">
+							<i class="glyphicon glyphicon-plus"></i>
+						</div>
+					</a>
+					<a>
+						<i class="glyphicon glyphicon-heart-empty"></i>
+						<p>关注</p>
+					</a>
+					<a>
+						<i class="glyphicon glyphicon-user"></i>
+						<p>我</p>
+					</a>
+				</div>
+			</ion-footer-bar>
+			
+			<div class="shadowAll" >
+				<div class="shadowBox"></div>
+				<div class="shadowContent">
+					<ion-scroll class="shadowscroll">
+						<img src="">
+						<video controls="controls" src="{{videoDown}}" ng-if="videoAtc" poster="img/dage0.jpg"></video>
+					</ion-scroll>
+				</div>
+				<div class="shadowclose" ng-click="closeBox()">
+					<h2>click here to close</h2>
+				</div>
+			</div>
+		</ion-side-menu-content>
+			
+			
+		<!-- 左侧菜单 -->
+		<ion-side-menu side="left">
+			<ion-content>
+				<div class="left_box01"></div>
+				<div class="left_box02"></div>
+				<div class="left_box03"></div>
+			</ion-content>
+			<ion-footer-bar align-title="left" class="bar-positive">
+				<div class="buttons">
+					<button class="button">左侧按钮</button>
+				</div>
+				<h1 class="title">Title!</h1>
+				<div class="buttons" ng-click="doSomething()">
+					<button class="button">右侧按钮</button>
+				</div>
+			</ion-footer-bar>
+		</ion-side-menu>
+	
+		<!-- 右侧菜单 -->
+		<ion-side-menu side="right">
+		</ion-side-menu>
+	</ion-side-menus>
+	
+	</body>
+</html>
